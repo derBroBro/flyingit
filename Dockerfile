@@ -10,4 +10,4 @@ RUN chmod 777 run.sh
 
 RUN mkdir git_repo
 
-CMD ["run.sh"]
+CMD ["sh -c ./run.sh"]
