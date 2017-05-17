@@ -1,3 +1,4 @@
+LABEL maintainer "malte.brodersen@itm-consulting.de"
 FROM alpine:latest
 
 RUN apk add --update git
@@ -10,4 +11,4 @@ RUN chmod 777 run.sh
 
 RUN mkdir git_repo
 
-CMD ["sh -c ./run.sh"]
+ENTRYPOINT ["/bin/sh -c /run.sh"]
