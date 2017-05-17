@@ -11,4 +11,4 @@ RUN chmod 777 run.sh
 
 RUN mkdir git_repo
 
-ENTRYPOINT ["/bin/sh -c /run.sh"]
+ENTRYPOINT ["/bin/sh","-c","/run.sh"]
