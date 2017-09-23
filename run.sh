@@ -33,12 +33,12 @@ if [ -z "$CC_PIPELINE" ]; then
   export CC_PIPELINE=fylingit
 fi
 
-fly -t $CC_TEAM login -c $CC_URL -u $CC_USER -p $CC_PASS
-fly -t  sync
+fly -t dafault login -c $CC_URL -u $CC_USER -p $CC_PASS -n $CC_TEAM
+fly -t default  sync
 
 if [ "$GIT_URL" ]; then
   echo start cloning git
   git clone $GIT_URL pipeline
 fi
 
-fly set-pipeline -t $CC_TEAM --config pipeline/$CC_PIPE_FILE --load-vars-from pipeline/$CC_CONFIG_FILE --pipeline $CC_PIPELINE --non-interactive
+fly set-pipeline -t dafault --config pipeline/$CC_PIPE_FILE --load-vars-from pipeline/$CC_CONFIG_FILE --pipeline $CC_PIPELINE --non-interactive
