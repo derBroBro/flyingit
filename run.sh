@@ -1,6 +1,6 @@
 if [ -z "$CC_URL" ]; then
   echo no CC_URL set, use default http://web:8080
-  export CC_URL=http:/web:8080
+  export CC_URL=http://web:8080
 fi
 
 if [ -z "$CC_USER" ]; then
@@ -15,7 +15,7 @@ fi
 
 if [ -z "$CC_TEAM" ]; then
   echo no CC_TEAM set, use default "main"
-  export CC_USER=main
+  export CC_TEAM=main
 fi
 
 if [ -z "$CC_CONFIG_FILE" ]; then
