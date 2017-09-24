@@ -18,19 +18,14 @@ if [ -z "$CC_TEAM" ]; then
   export CC_TEAM=main
 fi
 
-if [ -z "$CC_CONFIG_FILE" ]; then
-  echo no CC_CONFIG_FILE set, use default "config.yml"
-  export CC_CONFIG_FILE=config.yml
+if [ -z "$CC_COMMAND" ]; then
+  echo no CC_COMMAND set, exit
+  exit
 fi
 
-if [ -z "$CC_PIPE_FILE" ]; then
-  echo no CC_PIPE_FILE set, use default "pipeline.yml"
-  export CC_PIPE_FILE=pipeline.yml
-fi
-
-if [ -z "$CC_PIPELINE" ]; then
-  echo no CC_PIPELINE set, use default "flyingit"
-  export CC_PIPELINE=fylingit
+if [ -z "$CC_OTIONS" ]; then
+  echo no CC_COMMAND set, exit
+  exit
 fi
 
 fly -t default login -c $CC_URL -u $CC_USER -p $CC_PASS -n $CC_TEAM
@@ -41,4 +36,4 @@ if [ "$GIT_URL" ]; then
   git clone $GIT_URL pipeline
 fi
 
-fly set-pipeline -t default --config pipeline/$CC_PIPE_FILE --load-vars-from pipeline/$CC_CONFIG_FILE --pipeline $CC_PIPELINE --non-interactive
+fly $CC_COMMAND -t default $CC_OTIONS
