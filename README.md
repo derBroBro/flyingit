@@ -12,8 +12,6 @@ docker run --rm --name fly --link=web -e CC_URL=http://web:8080 -e CC_USER=conco
 |CC_URL|Concourse URL|
 |CC_USER|Concourse User|
 |CC_PASS|Concourse Password|
-|CC_PIPE_FILE|Concourse pipeline file|
-|CC_CONFIG_FILE|Concourse config file|
-|CC_PIPELINE|Concourse pipeline name|
-|CC_TEAM|Concourse team name|
+|CC_COMMAND|Concourse command like ```set-pipeline```|
+|CC_OPTIONS|Concourse options to add to the command|
 |GIT_URL|Git repo to clone|

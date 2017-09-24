@@ -23,8 +23,8 @@ if [ -z "$CC_COMMAND" ]; then
   exit
 fi
 
-if [ -z "$CC_OTIONS" ]; then
-  echo no CC_COMMAND set, exit
+if [ -z "$CC_OPTIONS" ]; then
+  echo no CC_OPTIONS set, exit
   exit
 fi
 
@@ -36,4 +36,4 @@ if [ "$GIT_URL" ]; then
   git clone $GIT_URL pipeline
 fi
 
-fly $CC_COMMAND -t default $CC_OTIONS
+fly $CC_COMMAND -t default $CC_OPTIONS
